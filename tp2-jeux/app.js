@@ -1,17 +1,36 @@
-import express from "express";
-import mongoose from "mongoose";
+import express from 'express';
+import jeuRoutes from './routes/jeu-Routes.js';
+import userRoutes from './routes/user-Routes.js';
+import errorHandler from './handler/error-handler.js';
+import { connectDB } from './util/bd.js';
+
+await connectDB();
 
 const app = express();
+
 app.use(express.json());
 
-// Connexion MongoDB
-mongoose.connect("mongodb://localhost:27017/tp2_jeux")
-  .then(() => console.log("MongoDB connecté"))
-  .catch((err) => console.error("Erreur MongoDB :", err));
-
-const port = 5000;
-app.listen(port, () => {
-  console.log(`Serveur démarré sur le port ${port}`);
+app.use((req, res, next) => {
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader(
+    'Access-Control-Allow-Headers',
+    'Origin, X-Requested-With, Content-Type, Accept, Authorization'
+  );
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PATCH, DELETE');
+  next();
 });
 
-export default app;
+app.use('/api/jeux', jeuRoutes);
+app.use('/api/users', userRoutes);
+
+app.use((req, res, next) => {
+  const error = new Error('Route non trouvée');
+  error.code = 404;
+  next(error);
+});
+
+app.use(errorHandler);
+
+app.listen(5000, () => {
+  console.log('Serveur écoute au', `http://localhost:5000`);
+});

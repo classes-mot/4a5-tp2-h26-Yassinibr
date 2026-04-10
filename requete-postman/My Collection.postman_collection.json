@@ -1,0 +1,234 @@
+{
+  "info": {
+    "_postman_id": "e8a83ae0-93d5-46ce-88be-2c1e92b67e01",
+    "name": "My Collection",
+    "description": "### Welcome to Postman! This is your first collection. \n\nCollections are your starting point for building and testing APIs. You can use this one to:\n\n• Group related requests\n• Test your API in real-world scenarios\n• Document and share your requests\n\nUpdate the name and overview whenever you’re ready to make it yours.\n\n[Learn more about Postman Collections.](https://learning.postman.com/docs/collections/collections-overview/)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "52766582",
+    "_collection_link": "https://go.postman.co/collection/52766582-e8a83ae0-93d5-46ce-88be-2c1e92b67e01?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "/api/jeux",
+      "item": [
+        {
+          "name": "Add Jeu",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5ZDk0OTA0YTIyZDM3YmZiMjVkODUxMCIsImVtYWlsIjoiamVhbkBlbWFpbC5jb20iLCJpYXQiOjE3NzU4NTY2NjMsImV4cCI6MTc3NTk0MzA2M30.ZdFDekV_F8WucpKZlZGuLC1_g3jE84aiWyDAcM2ZMr0",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"nom\": \"Catan\",\r\n  \"description\": \"Jeu de stratégie\",\r\n  \"nombreJoueurs\": 4\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/jeux",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "jeux"
+              ],
+              "query": [
+                {
+                  "key": "",
+                  "value": "",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get All Jeux",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "",
+                "value": "",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:5000/api/jeux",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "jeux"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Jeu (ID)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/jeux/69d967aa85cd61e695700613",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "jeux",
+                "69d967aa85cd61e695700613"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "MAJ Jeu",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5ZDk0OTA0YTIyZDM3YmZiMjVkODUxMCIsImVtYWlsIjoiamVhbkBlbWFpbC5jb20iLCJpYXQiOjE3NzU4NTY2NjMsImV4cCI6MTc3NTk0MzA2M30.ZdFDekV_F8WucpKZlZGuLC1_g3jE84aiWyDAcM2ZMr0",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"nombreJoueurs\": 6\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/jeux/69d96ce47e5022b51b59687c",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "jeux",
+                "69d96ce47e5022b51b59687c"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Supprimer Jeu",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5ZDk0OTA0YTIyZDM3YmZiMjVkODUxMCIsImVtYWlsIjoiamVhbkBlbWFpbC5jb20iLCJpYXQiOjE3NzU4NTY2NjMsImV4cCI6MTc3NTk0MzA2M30.ZdFDekV_F8WucpKZlZGuLC1_g3jE84aiWyDAcM2ZMr0",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:5000/api/jeux/69d96ce47e5022b51b59687c",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "jeux",
+                "69d96ce47e5022b51b59687c"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "/api/users",
+      "item": [
+        {
+          "name": "Inscription (USER)",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"nom\": \"Jean\",\r\n  \"email\": \"jean@email.com\",\r\n  \"motDePasse\": \"123456\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/users/inscription",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "users",
+                "inscription"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Connexion (USER)",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"email\": \"jean@email.com\",\r\n  \"motDePasse\": \"123456\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/users/connexion",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "users",
+                "connexion"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
